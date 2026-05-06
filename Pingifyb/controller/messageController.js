@@ -23,18 +23,18 @@ exports.sendmessage = async (req, res) => {
             conversation.messages.push(newmessage._id);
         }
         await conversation.save();
-       
+
         // soket io work
 
-        res.status(201).json(newmessage); 
+        res.status(201).json({ success: true, msg: "Message sent successfully", newmessage });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal server error" });
     }
-} 
+}
 exports.getMessages = async (req, res) => {
     try {
-        const senderId = req.user.id; 
+        const senderId = req.user.id;
         const reciverId = req.params.reciverId;
         const conversation = await Conversation.findOne({
             participants: { $all: [senderId, reciverId] }
