@@ -36,7 +36,3 @@ app.use("/message", messageRoute)
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`); 
 });
-// kumawatvansh365_db_user
-// CvFv1GapIV1QvVGb
-// mongodb+srv://kumawatvansh365_db_user:CvFv1GapIV1QvVGb@pingify.x4phq1u.mongodb.net/?appName=pingify
-// mongodb+srv://user:password@pingify.x4phq1u.mongodb.net/?appName=pingify
