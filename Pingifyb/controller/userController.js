@@ -75,7 +75,7 @@ exports.login = async (req, res) => {
                 .json({ msg: "Invalid credentials", success: false });
         }
         //send userdata
-        const logindata = await UserModel.findOne({ email }).select("-createdAt -updatedAt -__v");
+        const logindata = await UserModel.findOne({ email })
         // create token
         const token = jwt.sign({ email, id: user._id }, process.env.JWT_SECRET, { expiresIn: '2d' });
         res.cookie("token", token, {
@@ -99,11 +99,23 @@ exports.logout = async (req, res) => {
 
 exports.getallusers = async (req, res) => {
     try {
-        const {id} = req.user
+        const { id } = req.user
         const users = await UserModel.find({ _id: { $ne: id } }).select("-password");
         res.status(200).json({ users, success: true });
     } catch (error) {
         console.log(error);
     }
- 
+
+}
+exports.getLoggedInUser = async (req, res) => {
+    try {
+        const { id } = req.user;
+        const user = await UserModel.findById(id);
+        if (!user) {
+            return res.status(404).json({ msg: "User not found", success: false });
+        }
+        res.status(200).json({ user, success: true });
+    } catch (error) {
+        console.log(error);
+    }
 }

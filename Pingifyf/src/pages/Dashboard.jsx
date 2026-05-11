@@ -177,7 +177,7 @@ const Dashboard = () => {
 
       {/* Chat Page */}
       <div
-        className={`w-full h-screen bg-zinc-100 absolute right-0 transition-all duration-300 z-30 ${showchat ? 'top-0' : 'top-full'
+        className={`w-full h-screen bg-zinc-100 absolute right-0 transition-all duration-300 z-30 ${showchat ? 'top-0' : '-top-full'
           }`}
       >
 

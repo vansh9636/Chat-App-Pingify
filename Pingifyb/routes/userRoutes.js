@@ -8,4 +8,5 @@ router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.get("/logout", isAuthenticated, userController.logout);
 router.get("/getallusers", isAuthenticated, userController.getallusers);
+router.get("/getLoggedInUser", isAuthenticated, userController.getLoggedInUser);
 module.exports = router; 

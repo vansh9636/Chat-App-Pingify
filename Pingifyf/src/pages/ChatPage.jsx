@@ -134,7 +134,7 @@ const ChatPage = ({ receiverId }) => {
 
                         <div
                             key={msg._id}
-                            className={`w-fit max-w-[75%] px-3 py-2 my-1 rounded-xl break-words ${msg.receiverId === receiverId
+                            className={`w-fit max-w-[75%] px-3 py-2 my-1 rounded-xl wrap-break-words ${msg.receiverId === receiverId
                                     ? 'bg-[#dcfcb4] self-end'
                                     : 'bg-white self-start'
                                 }`}

@@ -21,7 +21,7 @@ const Welcome = () => {
                         className='bg-black text-white w-full py-3 px-5 rounded-xl flex justify-between items-center gap-2 text-lg font-medium'
                     >
                         Get Started
-                        <i className="ri-arrow-right-line text-2xl"></i>
+                        <i className="ri-arrow-right-line text-2xl animate-pulse"></i>
                     </Link>
                 </div>
 
